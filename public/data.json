@@ -1,0 +1,155 @@
+[
+    {
+        "SessionTitle": "Introduction to Machine Learning",
+        "TutorName": "Mr.Jk",
+        "AverageRating": 4.5,
+        "SessionDescription": "A beginner-friendly course on the basics of machine learning, covering key algorithms and concepts.",
+        "RegistrationStartDate": "2025-01-01",
+        "RegistrationEndDate": "2025-01-15",
+        "ClassStartTime": "2025-01-16T10:00:00",
+        "ClassEndDate": "2025-01-16T12:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "Free",
+        "Reviews": [
+            "Great introduction to machine learning!",
+            "The tutor explained the concepts clearly and engagingly."
+        ],
+        "Image": "https://i.ibb.co.com/S7SwL3H/1685986085903.jpg"
+    },
+    {
+        "SessionTitle": "Advanced Java Programming",
+        "TutorName": "Emily Clark",
+        "AverageRating": 4.7,
+        "SessionDescription": "An in-depth look at advanced topics in Java programming, including multithreading and network programming.",
+        "RegistrationStartDate": "2025-01-05",
+        "RegistrationEndDate": "2025-01-20",
+        "ClassStartTime": "2025-01-21T14:00:00",
+        "ClassEndDate": "2025-01-21T16:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$30",
+        "Reviews": [
+            "This session deepened my understanding of Java!",
+            "Highly recommended for those looking to master advanced Java techniques."
+        ],
+        "Image": "https://i.ibb.co.com/6FJ5DyT/360-F-292835773-o-Imix-QGFKLp-OPnjfsbes-Hyqdj-Ok5hsx-L.jpg"
+    },
+    {
+        "SessionTitle": "Basic Web Development",
+        "TutorName": "Sarah Lee",
+        "AverageRating": 4.2,
+        "SessionDescription": "Learn the fundamentals of web development, including HTML, CSS, and basic JavaScript.",
+        "RegistrationStartDate": "2025-01-03",
+        "RegistrationEndDate": "2025-01-12",
+        "ClassStartTime": "2025-01-13T09:00:00",
+        "ClassEndDate": "2025-01-13T11:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$15",
+        "Reviews": [
+            "Great for beginners, but could use more hands-on examples.",
+            "Loved the content, though I wish it covered more advanced topics."
+        ],
+        "Image": "https://i.ibb.co.com/6NKQXqc/web-development.jpg"
+    },
+    {
+        "SessionTitle": "Data Science with Python",
+        "TutorName": "Michael Smith",
+        "AverageRating": 4.8,
+        "SessionDescription": "A comprehensive guide to data analysis using Python, including libraries such as Pandas, NumPy, and Matplotlib.",
+        "RegistrationStartDate": "2025-01-10",
+        "RegistrationEndDate": "2025-01-25",
+        "ClassStartTime": "2025-01-26T13:00:00",
+        "ClassEndDate": "2025-01-26T15:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$40",
+        "Reviews": [
+            "Fantastic session! Covered everything I needed to know for data science.",
+            "The tutor was extremely knowledgeable and answered all my questions."
+        ],
+        "Image": "https://i.ibb.co.com/nqXgZkk/Data-Python.jpg"
+    },
+    {
+        "SessionTitle": "English Grammar Basics",
+        "TutorName": "Anna White",
+        "AverageRating": 4.0,
+        "SessionDescription": "Improve your English grammar skills with this easy-to-follow course for all levels.",
+        "RegistrationStartDate": "2025-01-02",
+        "RegistrationEndDate": "2025-01-10",
+        "ClassStartTime": "2025-01-11T10:00:00",
+        "ClassEndDate": "2025-01-11T12:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "Free",
+        "Reviews": [
+            "Clear explanations, but could have more practice exercises.",
+            "Very helpful for brushing up on my grammar skills."
+        ],
+        "Image": "https://i.ibb.co.com/Hp5jRbY/english.jpg"
+    },
+    {
+        "SessionTitle": "Introduction to Digital Marketing",
+        "TutorName": "David Green",
+        "AverageRating": 4.3,
+        "SessionDescription": "Get started with digital marketing, covering SEO, social media, and online advertising strategies.",
+        "RegistrationStartDate": "2025-01-05",
+        "RegistrationEndDate": "2025-01-15",
+        "ClassStartTime": "2025-01-16T11:00:00",
+        "ClassEndDate": "2025-01-16T13:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$20",
+        "Reviews": [
+            "This session was packed with useful information.",
+            "Great for beginners looking to dive into digital marketing."
+        ],
+        "Image": "https://i.ibb.co.com/F4TLZsq/Digital-marketing.png"
+    },
+    {
+        "SessionTitle": "Introduction to Graphic Design",
+        "TutorName": "Lily Brown",
+        "AverageRating": 4.6,
+        "SessionDescription": "Learn the basics of graphic design, including tools like Photoshop and Illustrator.",
+        "RegistrationStartDate": "2025-01-04",
+        "RegistrationEndDate": "2025-01-18",
+        "ClassStartTime": "2025-01-19T12:00:00",
+        "ClassEndDate": "2025-01-19T14:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$25",
+        "Reviews": [
+            "The tutor explained the software well, and the session was very interactive.",
+            "I now feel more confident using design tools!"
+        ],
+        "Image": "https://i.ibb.co.com/b2XkRLn/graphics.jpg"
+    },
+    {
+        "SessionTitle": "Effective Time Management",
+        "TutorName": "Olivia Davis",
+        "AverageRating": 4.4,
+        "SessionDescription": "Learn strategies and techniques for better time management and productivity.",
+        "RegistrationStartDate": "2025-01-06",
+        "RegistrationEndDate": "2025-01-13",
+        "ClassStartTime": "2025-01-14T15:00:00",
+        "ClassEndDate": "2025-01-14T17:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "Free",
+        "Reviews": [
+            "A practical session with actionable tips for managing my time better.",
+            "I feel more organized and focused after attending this class."
+        ],
+        "Image": "https://i.ibb.co.com/K5Dn0Ry/time-managements.jpg"
+    },
+    {
+        "SessionTitle": "Financial Literacy for Beginners",
+        "TutorName": "James Wilson",
+        "AverageRating": 4.9,
+        "SessionDescription": "Gain an understanding of personal finance, budgeting, and saving for the future.",
+        "RegistrationStartDate": "2025-01-08",
+        "RegistrationEndDate": "2025-01-20",
+        "ClassStartTime": "2025-01-21T16:00:00",
+        "ClassEndDate": "2025-01-21T18:00:00",
+        "SessionDuration": "2 hours",
+        "RegistrationFee": "$35",
+        "Reviews": [
+            "This class completely changed how I approach my finances!",
+            "The tutor was very engaging and made complex concepts easy to understand."
+        ],
+        "Image": "https://i.ibb.co.com/ZcjRjhd/financial-literacy.webp"
+    }
+]
