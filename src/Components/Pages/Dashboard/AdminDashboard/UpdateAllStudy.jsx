@@ -155,7 +155,7 @@ const UpdateAllStudy = () => {
                         <label htmlFor="classStartDate" className="text-sm font-semibold">Class Start Date</label>
                         <input
                             type="date"
-                            defaultValue={adminUpdateSession.ClassStartDate}
+                            defaultValue={adminUpdateSession.ClassStartTime}
                             id="classStartDate"
                             {...register("classStartDate", { required: "Class start date is required" })}
                             className={`input input-bordered ${errors.classStartDate ? 'input-error' : ''}`}
