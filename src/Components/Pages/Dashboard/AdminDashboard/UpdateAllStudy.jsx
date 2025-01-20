@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
+import useAxiosPublic from './../../../Hooks/useAxiosPublic';
+import useAxiosSecure from './../../../Hooks/useAxiosSecure';
+import useRole from './../../../Hooks/useRole';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
-import useAxiosPublic from '../../../Hooks/useAxiosPublic';
-import { useNavigate } from 'react-router-dom';
-import useRole from '../../../Hooks/useRole';
 let img_hosting_key = import.meta.env.VITE_IMG_HOSTING;
 let img_hosting_Api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
-const CreateStudy = () => {
+const UpdateAllStudy = () => {
+    let adminUpdateSession = useLoaderData();
     let { user } = useContext(AuthContext)
     let [role,] = useRole()
     let axiosSecure = useAxiosSecure();
@@ -24,7 +25,7 @@ const CreateStudy = () => {
             }
         })
         if (res.data.success) {
-            let sessionItem = {
+            let updateSession = {
                 SessionTitle: data.sessionTitle,
                 TutorName: data.tutorName,
                 Image: res.data.data.display_url,
@@ -38,17 +39,17 @@ const CreateStudy = () => {
                 Status: 'pending ',
                 role: role
             }
-            let session = await axiosSecure.post('/sessions', sessionItem)
-            if (session.data.insertedId) {
+            let session = await axiosSecure.put(`/sessions/${adminUpdateSession._id}`, updateSession)
+            if (session.data.modifiedCount > 0) {
                 reset()
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: `Create Study successfully !`,
+                    title: `Update Study successfully !`,
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate('/dashboard/viewAllStudy')
+                navigate('/dashboard/AdminviewAllStudy')
 
             }
 
@@ -57,7 +58,7 @@ const CreateStudy = () => {
     };
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Create Study Session</h1>
+            <h1 className="text-2xl font-bold mb-4">Update Study Session</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
                 {/* Tutor Name */}
@@ -103,6 +104,7 @@ const CreateStudy = () => {
                     <input
                         type="text"
                         id="sessionTitle"
+                        defaultValue={adminUpdateSession.SessionTitle}
                         {...register("sessionTitle", { required: "Session title is required" })}
                         className={`input input-bordered ${errors.sessionTitle ? 'input-error' : ''}`}
                     />
@@ -110,12 +112,13 @@ const CreateStudy = () => {
                 </div>
 
                 {/* Session Description */}
-                <div className="flex flex-col">
+                <div className="flex flex-col overflow-hidden">
                     <label htmlFor="sessionDescription" className="text-sm font-semibold">Session Description</label>
                     <textarea
                         id="sessionDescription"
+                        defaultValue={adminUpdateSession.SessionDescription}
                         {...register("sessionDescription", { required: "Session description is required" })}
-                        className={`textarea textarea-bordered ${errors.sessionDescription ? 'textarea-error' : ''}`}
+                        className={`textarea textarea-bordered break-words whitespace-normal ${errors.sessionDescription ? 'textarea-error' : ''}`}
                     />
                     {errors.sessionDescription && <span className="text-xs text-red-500">{errors.sessionDescription.message}</span>}
                 </div>
@@ -125,6 +128,7 @@ const CreateStudy = () => {
                     <div className="flex w-full flex-col">
                         <label htmlFor="registrationStartDate" className="text-sm font-semibold">Registration Start Date</label>
                         <input
+                            defaultValue={adminUpdateSession.RegistrationStartDate}
                             type="date"
                             id="registrationStartDate"
                             {...register("registrationStartDate", { required: "Registration start date is required" })}
@@ -137,6 +141,7 @@ const CreateStudy = () => {
                         <label htmlFor="registrationEndDate" className="text-sm font-semibold">Registration End Date</label>
                         <input
                             type="date"
+                            defaultValue={adminUpdateSession.RegistrationEndDate}
                             id="registrationEndDate"
                             {...register("registrationEndDate", { required: "Registration end date is required" })}
                             className={`input input-bordered ${errors.registrationEndDate ? 'input-error' : ''}`}
@@ -150,6 +155,7 @@ const CreateStudy = () => {
                         <label htmlFor="classStartDate" className="text-sm font-semibold">Class Start Date</label>
                         <input
                             type="date"
+                            defaultValue={adminUpdateSession.ClassStartDate}
                             id="classStartDate"
                             {...register("classStartDate", { required: "Class start date is required" })}
                             className={`input input-bordered ${errors.classStartDate ? 'input-error' : ''}`}
@@ -161,6 +167,7 @@ const CreateStudy = () => {
                         <label htmlFor="classEndDate" className="text-sm font-semibold">Class End Date</label>
                         <input
                             type="date"
+                            defaultValue={adminUpdateSession.ClassEndDate}
                             id="classEndDate"
                             {...register("classEndDate", { required: "Class end date is required" })}
                             className={`input input-bordered ${errors.classEndDate ? 'input-error' : ''}`}
@@ -175,6 +182,7 @@ const CreateStudy = () => {
                         <label htmlFor="sessionDuration" className="text-sm font-semibold">Session Duration (in hours)</label>
                         <input
                             type="number"
+                            defaultValue={adminUpdateSession.SessionDuration}
                             id="sessionDuration"
                             {...register("sessionDuration", { required: "Session duration is required" })}
                             className={`input input-bordered ${errors.sessionDuration ? 'input-error' : ''}`}
@@ -188,9 +196,8 @@ const CreateStudy = () => {
                         <label htmlFor="registrationFee" className="text-sm font-semibold">Registration fee</label>
                         <input
                             type="number"
+                            defaultValue={adminUpdateSession.RegistrationFee}
                             id="registrationFee"
-                            value={0}
-                            readOnly
                             {...register("registrationFee", { required: "Fee is required" })}
                             className={`input input-bordered ${errors.registrationFee ? 'input-error' : ''}`}
                         />
@@ -202,4 +209,4 @@ const CreateStudy = () => {
     );
 };
 
-export default CreateStudy;
+export default UpdateAllStudy;

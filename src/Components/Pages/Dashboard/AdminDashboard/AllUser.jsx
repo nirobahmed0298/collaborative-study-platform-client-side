@@ -47,10 +47,6 @@ const AllUser = () => {
     }, [search]);
 
 
-
-
-
-
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -99,7 +95,6 @@ const AllUser = () => {
         }).then((result) => {
             axisosSecure.delete(`/users/${user._id}`)
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.deletedCount > 0) {
                         Swal.fire({
                             title: "Deleted!",
@@ -136,7 +131,7 @@ const AllUser = () => {
                 <table className="table-auto w-full text-left border-collapse">
                     <thead className="text-black">
                         <tr>
-                            <th className="py-2 px-4"></th>
+                            <th className="py-2 px-4">Serial</th>
                             <th className="py-2 px-4">Name</th>
                             <th className="py-2 px-4">Email</th>
                             <th className="py-2 px-4">Role</th>
@@ -148,12 +143,13 @@ const AllUser = () => {
                             <tr key={user._id} className="border-b hover:bg-gray-100">
                                 <td className="py-2 px-4">{i + 1}</td>
                                 <td className="py-2 px-4">{user.name}</td>
-                                <td className="py-2 px-4">{user?.role}</td>
+                                <td className="py-2 px-4">{user?.email}</td>
                                 <td className="px-4 py-2">
                                     <select
                                         value={user.role}
                                         onChange={(e) => handleMakeAdmin(user._id, e.target.value)}
                                     >
+                                        <option >Role</option>
                                         <option value="admin">Admin</option>
                                         <option value="student">Student</option>
                                         <option value="tutor">Tutor</option>

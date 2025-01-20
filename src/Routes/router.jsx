@@ -24,6 +24,7 @@ import AdminViewMaterial from "../Components/Pages/Dashboard/AdminDashboard/Admi
 import ViewAllMaterial from './../Components/Pages/Dashboard/TutorDashboard/ViewAllMaterial';
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import RoleRoute from "../Components/PrivateRoute/roleRoute";
+import UpdateAllStudy from "../Components/Pages/Dashboard/AdminDashboard/UpdateAllStudy";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/sessions/${params.id}`)
+                loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/sessions/${params.id}`)
             },
             {
                 path: '/dashboard',
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
                     {
                         path: '/dashboard/viewBookedSection/:id',
                         element: <RoleRoute><ViewBookedDetails></ViewBookedDetails></RoleRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/sessions/${params.id}`)
+                        loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/sessions/${params.id}`)
                     },
                     {
                         path: '/dashboard/createNote',
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
                     {
                         path: '/dashboard/updateNote/:id',
                         element: <RoleRoute><UpdateNote></UpdateNote></RoleRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/notes/${params.id}`)
+                        loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/notes/${params.id}`)
 
                     },
                     {
@@ -104,25 +105,31 @@ const router = createBrowserRouter([
                     {
                         path: '/dashboard/TutorAllMaterials/:id',
                         element: <RoleRoute><UpdateTutorMaterial></UpdateTutorMaterial></RoleRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/materials/${params.id}`)
+                        loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/materials/${params.id}`)
 
                     },
                     // Admin Dashboard
                     {
                         path: '/dashboard/TutorAllMaterials',
-                        element:<RoleRoute><ViewAllMaterial></ViewAllMaterial></RoleRoute> ,
+                        element: <RoleRoute><ViewAllMaterial></ViewAllMaterial></RoleRoute>,
                     },
                     {
                         path: '/dashboard/allUser',
-                        element:<RoleRoute><AllUser></AllUser></RoleRoute> ,
+                        element: <RoleRoute><AllUser></AllUser></RoleRoute>,
                     },
                     {
                         path: '/dashboard/AdminViewAllStudy',
-                        element:<RoleRoute><AdminViewAllStudy></AdminViewAllStudy></RoleRoute> ,
+                        element: <RoleRoute><AdminViewAllStudy></AdminViewAllStudy></RoleRoute>,
+                    },
+                    {
+                        path: '/dashboard/AdminViewAllStudy/:id',
+                        element: <RoleRoute><UpdateAllStudy></UpdateAllStudy></RoleRoute>,
+                        loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/sessions/${params.id}`)
+
                     },
                     {
                         path: '/dashboard/AdminAllMaterials',
-                        element:<RoleRoute><AdminViewMaterial></AdminViewMaterial></RoleRoute> ,
+                        element: <RoleRoute><AdminViewMaterial></AdminViewMaterial></RoleRoute>,
                     },
                 ]
             },
@@ -130,7 +137,7 @@ const router = createBrowserRouter([
             {
                 path: '/payment/:id',
                 element: <PrivateRoute><BookedSession></BookedSession></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/sessions/${params.id}`)
+                loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/sessions/${params.id}`)
             },
             {
                 path: '/login',

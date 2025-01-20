@@ -3,7 +3,7 @@ import useBookedSession from '../../../Hooks/useBookedSession';
 import CardViewBookedSession from './CardViewBookedSession';
 
 const ViewBookedSection = () => {
-    let [bookedSession, , refetch] = useBookedSession();
+    let [bookedSession, isLoading, refetch] = useBookedSession();
     return (
         <>
             {
@@ -14,7 +14,7 @@ const ViewBookedSection = () => {
                         <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                             {bookedSession.map((sessionData) => (
                                 <div key={sessionData._id} className="bg-white shadow-lg rounded-lg p-4 w-full">
-                                    {sessionData.session.map((session) => (
+                                    {sessionData?.session?.map((session) => (
                                         <CardViewBookedSession
                                             key={session._id}
                                             session={session}

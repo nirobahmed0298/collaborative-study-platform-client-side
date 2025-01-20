@@ -23,7 +23,6 @@ const AdminViewMaterial = () => {
         }).then((result) => {
             axiosSecure.delete(`/materials/${Id}`)
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.deletedCount > 0) {
                         Swal.fire({
                             title: "Deleted!",

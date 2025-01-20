@@ -20,7 +20,6 @@ const UploadMaterial = () => {
     let handleFileChange = (e) => {
         let selectedFile = e.target.files[0];
         if (selectedFile) {
-            console.log(selectedFile);
             setFile(selectedFile);
         }
     };

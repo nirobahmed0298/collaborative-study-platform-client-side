@@ -44,10 +44,8 @@ const CheckOutForm = ({ session }) => {
         });
 
         if (error) {
-            console.log('[error]', error);
             setError(error.message)
         } else {
-            console.log('[paymentMethod]', paymentMethod);
         }
 
         // confirm payment
@@ -75,7 +73,9 @@ const CheckOutForm = ({ session }) => {
                     price: fee,
                     transactionId: paymentIntent.id,
                     date: new Date(),
-                    session: session,
+                    session: [
+                        session
+                    ],
                     status: 'pending'
                 }
                 const res = await axiosSecure.post('/payments', payment);

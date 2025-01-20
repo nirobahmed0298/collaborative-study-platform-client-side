@@ -10,16 +10,21 @@ const ViewAllStudy = () => {
             <div className='grid gap-4 grid-cols-1 md:grid-cols-2 '>
                 {
                     sessions.map((session, index) =>
-                        <div key={index} className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-md">
+                        <div key={index} className="w-full p-2 bg-white shadow-lg rounded-md overflow-hidden">
                             <div className='h-[150px]'>
                                 <img className='object-cover w-full h-full' src={session.Image} alt="" />
                             </div>
                             {/* Title and Tutor Name */}
-                            <h1 className="text-2xl font-bold mb-2">{session.SessionTitle}</h1>
+                            <h1 className="text-2xl font-bold my-2">{session.SessionTitle}</h1>
                             <p className="text-gray-700 mb-4">
                                 <strong>Tutor:</strong> {session.TutorName}
                             </p>
+                            {
+                                session.Status === 'approve' ?
+                                    <p className='badge badge-success'>Status : {session.Status}</p>
+                                    : <p className='badge badge-error'>Status : {session.Status}</p>
 
+                            }
                             {/* Average Rating */}
                             <div className="mb-4">
                                 <span className="font-medium">Average Rating:</span>{" "}
@@ -29,7 +34,7 @@ const ViewAllStudy = () => {
 
                             {/* Session Description */}
                             <div className="mb-4">
-                                <h2 className="text-lg font-semibold mb-2">Session Description:</h2>
+                                <h2 className="text-lg font-semibold mb-2 break-words whitespace-normal">Session Description:</h2>
                                 <p className="text-gray-700">{session.SessionDescription}</p>
                             </div>
 
@@ -66,15 +71,19 @@ const ViewAllStudy = () => {
                                 <h2 className="text-lg font-semibold mb-2">Student Reviews:</h2>
                                 {session?.Reviews && session?.Reviews.length > 0 ? (
                                     <ul className="pl-5">
-                                        {session?.Reviews.map((review, index) => (
+                                        {/* {session?.Reviews?.map((review, index) => (
                                             <li key={index} className="text-gray-700">
                                                 {review}
                                             </li>
-                                        ))}
+                                        ))} */}
+                                        {session?.Reviews}
+
                                     </ul>
-                                ) : (
-                                    <p>No reviews available for this session.</p>
-                                )}
+                                )
+
+                                    : (
+                                        <p>No reviews available for this session.</p>
+                                    )}
                             </div>
                         </div>
                     )

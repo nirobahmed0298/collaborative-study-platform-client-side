@@ -10,7 +10,6 @@ const useBookedSession = () => {
         queryKey: [user?.email, 'bookedSession'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/payments/${user?.email}`);
-            console.log(res.data);
             return res?.data;
         }
     })

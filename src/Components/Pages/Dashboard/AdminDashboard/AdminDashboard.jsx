@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
             <div className='mt-24'>
                 <div className="min-h-screen bg-gray-100 md:flex w-full md:w-11/12 mx-auto">
-                    <div className="md:w-1/4 bg-white shadow-md min-h-screen p-5">
+                    <div className="md:w-1/4 bg-white shadow-md p-5">
                         <h1 className="text-2xl font-bold mb-6 text-blue-600">Peer Study</h1>
                         <p className="text-gray-600 mb-8">You are <span className="font-bold capitalize">{role}</span></p>
                         <ul className="space-y-4">
