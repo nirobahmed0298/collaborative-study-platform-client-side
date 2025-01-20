@@ -36,7 +36,7 @@ const UpdateAllStudy = () => {
                 ClassEndDate: data.classEndDate,
                 SessionDuration: data.sessionDuration,
                 RegistrationFee: parseInt(data.registrationFee),
-                Status: 'pending ',
+                Status: adminUpdateSession.Status,
                 role: role
             }
             let session = await axiosSecure.put(`/sessions/${adminUpdateSession._id}`, updateSession)
@@ -93,11 +93,10 @@ const UpdateAllStudy = () => {
                     <input
                         type="file"
                         id="file"
-                        className="file-input file-input-bordered w-full"
-                        {...register('file')}
+                        {...register('file', { required: "Upload This session Image" })}
+                        className={`input input-bordered w-full p-2 ${errors.file ? 'input-error' : ''}`}
                     />
                 </div>
-
                 {/* Session Title */}
                 <div className="flex flex-col">
                     <label htmlFor="sessionTitle" className="text-sm font-semibold">Session Title</label>
@@ -203,7 +202,7 @@ const UpdateAllStudy = () => {
                         />
                     </div>
                 </div>
-                <button type="submit" className="btn w-full bg-blue-500 hover:bg-blue-600 text-white mt-4">Create Session</button>
+                <button type="submit" className="btn w-full bg-blue-500 hover:bg-blue-600 text-white mt-4">Update Session</button>
             </form >
         </div >
     );

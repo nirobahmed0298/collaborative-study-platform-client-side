@@ -1,6 +1,9 @@
 ## Collaborative Study Platform.
 
-**Website Link** : 
+**Website Link** : https://b10a12-peer-study.netlify.app/
+
+- Admin Email : nirobahmed0296@gmail.com
+* Password : AAAaaa
 
 **Server Side Link** : https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-nirobahmed0298
 
