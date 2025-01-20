@@ -34,7 +34,6 @@ const CreateStudy = () => {
                 ClassStartTime: data.classStartDate,
                 ClassEndDate: data.classEndDate,
                 SessionDuration: data.sessionDuration,
-                Status: data.status,
                 RegistrationFee: data.registrationFee,
                 AverageRating: data.rating,
                 role: role
@@ -197,31 +196,14 @@ const CreateStudy = () => {
                         />
                     </div>
                 </div>
-
-                <div className='flex flex-col sm:flex-row sm:space-x-4'>
-                    {/* Session Status */}
-                    <div className="flex w-full flex-col">
-                        <label htmlFor="status" className="text-sm font-semibold">Session Status</label>
-                        <select
-                            id="status"
-                            {...register("status")}
-                            className="select select-bordered"
-                        >
-                            <option value="pending">Pending</option>
-                            <option value="confirmed">Confirmed</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
-                    </div>
-                    {/* Rating */}
-                    <div className="flex w-full flex-col">
-                        <label htmlFor="rating" className="text-sm font-semibold">Registration fee</label>
-                        <input
-                            type="number"
-                            id="rating"
-                            {...register("rating", { required: "Rating is required" })}
-                            className={`input input-bordered ${errors.rating ? 'input-error' : ''}`}
-                        />
-                    </div>
+                <div className="flex w-full flex-col">
+                    <label htmlFor="rating" className="text-sm font-semibold">Rating</label>
+                    <input
+                        type="number"
+                        id="rating"
+                        {...register("rating", { required: "Rating is required" })}
+                        className={`input input-bordered ${errors.rating ? 'input-error' : ''}`}
+                    />
                 </div>
 
                 <button type="submit" className="btn w-full bg-blue-500 hover:bg-blue-600 text-white mt-4">Create Session</button>

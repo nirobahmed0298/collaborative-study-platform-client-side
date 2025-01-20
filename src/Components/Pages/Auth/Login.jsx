@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const Login = () => {
     let navigate = useNavigate()
     let { user, signIn, googleSignIn } = useContext(AuthContext)
     let location = useLocation();
+    let axiosPublic = useAxiosPublic()
     let from = location.state?.from?.pathname || '/'
     let handleLogin = e => {
         e.preventDefault()
@@ -30,15 +32,24 @@ const Login = () => {
     let handleGoogleLogIn = () => {
         googleSignIn()
             .then(result => {
-                console.log(result.user);
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "You Login SuccessFully..!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                navigate(from, { replace: true });
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName,
+                    photo: result.user?.photoURL,
+                    role: 'student'
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "You Login SuccessFully..!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        navigate(from, { replace: true });
+
+                    })
             })
     }
     return (
@@ -83,7 +94,7 @@ const Login = () => {
 
 
                 {/* Sign In Button */}
-                <button disabled={false} className="btn btn-primary w-full">Login</button>
+                <button disabled={false} className="btn btn-outline w-full">Login</button>
             </form>
 
             {/* Links */}

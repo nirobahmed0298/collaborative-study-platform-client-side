@@ -45,7 +45,7 @@ const CreateNote = () => {
 
                 {/* Title Field */}
                 <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Title</label>
+                    <label className="block text-sm font-medium text-gray-700">Note Title</label>
                     <input
                         type="text"
                         name="title"
@@ -58,7 +58,7 @@ const CreateNote = () => {
 
                 {/* Description Field */}
                 <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Description</label>
+                    <label className="block text-sm font-medium text-gray-700">Note Description</label>
                     <textarea
                         name="description"
                         placeholder="Enter note description"

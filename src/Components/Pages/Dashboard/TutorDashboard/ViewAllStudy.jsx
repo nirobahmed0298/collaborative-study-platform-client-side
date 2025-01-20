@@ -1,7 +1,6 @@
 import React from 'react';
 import useSession from '../../../Hooks/useSession';
 import { Link } from 'react-router-dom';
-
 const ViewAllStudy = () => {
     let [sessions] = useSession();
     let currentDate = new Date();
@@ -13,7 +12,7 @@ const ViewAllStudy = () => {
                     sessions.map((session, index) =>
                         <div key={index} className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-md">
                             <div className='h-[150px]'>
-                                <img className='object-cover w-full h-full' src={session?.Image} alt="" />
+                                <img className='object-cover w-full h-full' src={session.Image} alt="" />
                             </div>
                             {/* Title and Tutor Name */}
                             <h1 className="text-2xl font-bold mb-2">{session.SessionTitle}</h1>
@@ -62,7 +61,6 @@ const ViewAllStudy = () => {
                                 <strong>Registration Fee:</strong>{" "}
                                 $ {session.RegistrationFee}
                             </div>
-
                             {/* Reviews */}
                             <div className="mb-4">
                                 <h2 className="text-lg font-semibold mb-2">Student Reviews:</h2>

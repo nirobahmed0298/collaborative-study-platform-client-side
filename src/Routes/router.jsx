@@ -23,7 +23,7 @@ import AdminViewAllStudy from "../Components/Pages/Dashboard/AdminDashboard/Admi
 import AdminViewMaterial from "../Components/Pages/Dashboard/AdminDashboard/AdminViewMaterial";
 import ViewAllMaterial from './../Components/Pages/Dashboard/TutorDashboard/ViewAllMaterial';
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
-
+import RoleRoute from "../Components/PrivateRoute/roleRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -47,81 +47,82 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
                 children: [
+                    // Student Dashboard
                     {
                         path: '/dashboard/viewBookedSection',
-                        element: <PrivateRoute><ViewBookedSection></ViewBookedSection></PrivateRoute>,
+                        element: <RoleRoute><ViewBookedSection></ViewBookedSection></RoleRoute>
                     },
                     {
                         path: '/dashboard/viewBookedSection/:id',
-                        element: <PrivateRoute><ViewBookedDetails></ViewBookedDetails></PrivateRoute>,
+                        element: <RoleRoute><ViewBookedDetails></ViewBookedDetails></RoleRoute>,
                         loader: ({ params }) => fetch(`http://localhost:5000/sessions/${params.id}`)
                     },
                     {
                         path: '/dashboard/createNote',
-                        element: <PrivateRoute><CreateNote></CreateNote></PrivateRoute>,
+                        element: <RoleRoute><CreateNote></CreateNote></RoleRoute>
                     },
                     {
                         path: '/dashboard/manageNote',
-                        element: <PrivateRoute><ManageNote></ManageNote></PrivateRoute>,
+                        element: <RoleRoute><ManageNote></ManageNote></RoleRoute>,
                     },
                     {
                         path: '/dashboard/updateNote/:id',
-                        element: <PrivateRoute><UpdateNote></UpdateNote></PrivateRoute>,
+                        element: <RoleRoute><UpdateNote></UpdateNote></RoleRoute>,
                         loader: ({ params }) => fetch(`http://localhost:5000/notes/${params.id}`)
 
                     },
                     {
                         path: '/dashboard/allMaterials',
-                        element: <PrivateRoute><AllMaterials></AllMaterials></PrivateRoute>,
+                        element: <RoleRoute><AllMaterials></AllMaterials></RoleRoute>,
 
                     },
                     // Tutor Dashboard
                     {
                         path: '/dashboard/createStudy',
-                        element: <PrivateRoute><CreateStudy></CreateStudy></PrivateRoute>,
+                        element: <RoleRoute><CreateStudy></CreateStudy></RoleRoute>,
 
                     },
                     {
                         path: '/dashboard/ViewAllStudy',
-                        element: <PrivateRoute><ViewAllStudy></ViewAllStudy></PrivateRoute>,
+                        element: <RoleRoute><ViewAllStudy></ViewAllStudy></RoleRoute>,
 
                     },
                     {
                         path: '/dashboard/createStudy',
-                        element: <PrivateRoute><CreateStudy></CreateStudy></PrivateRoute>,
+                        element: <RoleRoute><CreateStudy></CreateStudy></RoleRoute>,
 
                     },
                     {
                         path: '/dashboard/updateMaterials',
-                        element: <PrivateRoute><UploadMaterial></UploadMaterial></PrivateRoute>,
+                        element: <RoleRoute><UploadMaterial></UploadMaterial></RoleRoute>,
 
                     },
                     {
                         path: '/dashboard/TutorAllMaterials',
-                        element: <PrivateRoute><ViewAllMaterial></ViewAllMaterial></PrivateRoute>,
+                        element: <RoleRoute><ViewAllMaterial></ViewAllMaterial></RoleRoute>,
                     },
                     {
                         path: '/dashboard/TutorAllMaterials/:id',
-                        element: <PrivateRoute><UpdateTutorMaterial></UpdateTutorMaterial></PrivateRoute>,
+                        element: <RoleRoute><UpdateTutorMaterial></UpdateTutorMaterial></RoleRoute>,
                         loader: ({ params }) => fetch(`http://localhost:5000/materials/${params.id}`)
 
                     },
                     // Admin Dashboard
                     {
                         path: '/dashboard/TutorAllMaterials',
-                        element: <PrivateRoute><ViewAllMaterial></ViewAllMaterial></PrivateRoute>,
+                        element:<RoleRoute><ViewAllMaterial></ViewAllMaterial></RoleRoute> ,
                     },
                     {
                         path: '/dashboard/allUser',
-                        element: <PrivateRoute><AllUser></AllUser></PrivateRoute>,
+                        element:<RoleRoute><AllUser></AllUser></RoleRoute> ,
                     },
                     {
                         path: '/dashboard/AdminViewAllStudy',
-                        element: <PrivateRoute><AdminViewAllStudy></AdminViewAllStudy></PrivateRoute>,
+                        element:<RoleRoute><AdminViewAllStudy></AdminViewAllStudy></RoleRoute> ,
                     },
                     {
                         path: '/dashboard/AdminAllMaterials',
-                        element: <PrivateRoute><AdminViewMaterial></AdminViewMaterial></PrivateRoute>,
+                        element:<RoleRoute><AdminViewMaterial></AdminViewMaterial></RoleRoute> ,
                     },
                 ]
             },
