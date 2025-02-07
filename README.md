@@ -10,7 +10,7 @@
 - Totur Email : nirobahmed@gmail.com
 * Password : AAAaaa
 
-**Server Side Link** : https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-nirobahmed0298
+**Server Side Link** : https://github.com/nirobahmed0298/collaborative-study-platform-server-side
 
 **npm packages** : 
 - react-hook-form
