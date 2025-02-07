@@ -2,7 +2,12 @@
 
 **Website Link** : https://b10a12-peer-study.netlify.app/
 
+**Des** : The goal of this assessment is to create a collaborative learning platform that connects students, teachers, and administrators to facilitate study scheduling, resource sharing, and user management. By integrating these functionalities into a single platform, we aim to increase collaboration, improve access to study materials, and ensure effective management of educational activities. This project supports the dynamic needs of modern education.
+
 - Admin Email : nirobahmed0296@gmail.com
+* Password : AAAaaa
+
+- Totur Email : nirobahmed@gmail.com
 * Password : AAAaaa
 
 **Server Side Link** : https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-nirobahmed0298
