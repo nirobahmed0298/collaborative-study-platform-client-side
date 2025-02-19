@@ -6,7 +6,7 @@ const StudySessionCard = ({ currentSessions }) => {
     return (
         <>
             {currentSessions.map((session, index) => (
-                <div key={index} className="card bg-base-100 shadow-xl">
+                <div key={index} className="card rounded-none bg-base-100 shadow-xl">
                     <figure>
                         <img src={session?.Image} alt='photo' className="w-full h-48 object-cover" />
                     </figure>

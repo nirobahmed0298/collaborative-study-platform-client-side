@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                element: <Details></Details>,
                 loader: ({ params }) => fetch(`https://collaborative-study-platform-server.vercel.app/sessions/${params.id}`)
             },
             {

@@ -116,7 +116,7 @@ let AdminViewAllStudy = () => {
 
     return (
         <>
-            <div>
+            <div className='mb-20'>
                 {/* Main Content */}
                 <h2 className="text-2xl font-bold mb-4">All Sessions</h2>
                 <div className="my-6 flex justify-between items-center">

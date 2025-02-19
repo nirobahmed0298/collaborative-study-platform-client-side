@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useRole from '../../../Hooks/useRole';
@@ -7,9 +7,12 @@ import { FaCloudUploadAlt, FaHome } from 'react-icons/fa';
 import { IoCreateSharp } from 'react-icons/io5';
 import { MdGridView } from 'react-icons/md';
 import { GrView } from 'react-icons/gr';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const TutorDashboard = () => {
     let [role,] = useRole();
+    let { user } = useContext(AuthContext);
+
     return (
         <>
             <Helmet>
@@ -17,7 +20,7 @@ const TutorDashboard = () => {
             </Helmet>
 
             <div className='mt-24'>
-                <div className="min-h-screen bg-gray-100 md:flex w-full md:w-11/12 mx-auto">
+                <div className="min-h-screen fixed h-screen bg-gray-100 md:flex w-full md:w-11/12 mx-auto">
                     <div className="md:w-1/4 bg-white shadow-md min-h-screen p-5">
                         <h1 className="text-2xl font-bold mb-6 text-blue-600">Peer Study</h1>
                         <p className="text-gray-600 mb-8">You are <span className="font-bold capitalize">{role}</span></p>
@@ -73,7 +76,13 @@ const TutorDashboard = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="w-full md:w-3/4 md:p-10">
+                    <div className="w-full md:w-3/4 overflow-y-auto md:p-10">
+                        <section className="py-10 px-6 rounded-xl text-center w-full">
+                            <div>
+                                <h1 className="text-3xl font-bold text-gray-800">Welcome Back, <span>{user.displayName}</span> 👋</h1>
+                                <p className="text-gray-600 mt-1">Here’s what’s happening today on your dashboard.</p>
+                            </div>
+                        </section>
                         <Outlet></Outlet>
                     </div>
                 </div>

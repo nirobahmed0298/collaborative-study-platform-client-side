@@ -109,7 +109,7 @@ const AllUser = () => {
 
 
     return (
-        <div>
+        <div className='mb-20'>
             {/* Main Content */}
             <h2 className="text-2xl font-bold mb-4">All Users</h2>
             <div className='my-4'>

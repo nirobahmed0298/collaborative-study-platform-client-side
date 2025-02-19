@@ -1,5 +1,6 @@
 import React from 'react';
 import banner from '../../../assets/Home-Banner.png';
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div
@@ -14,7 +15,7 @@ const Banner = () => {
                     <p className="mb-5 text-[14px] opacity-60">
                         Connect, share resources, and collaborate with fellow students to achieve academic success. Join the Collaborative Study Hub today for effective and engaging learning!
                     </p>
-                    <button className="btn btn-outline border text-white rounded-none">Get Started</button>
+                    <Link to={`/allTutor`} className="btn btn-outline border text-white rounded-none">Get Started</Link>
                 </div>
             </div>
         </div>

@@ -13,9 +13,7 @@ const Navbar = () => {
     let links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allTutor'>All Tutor</NavLink></li>
-        {
-            user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-        }
+        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
 
     </>
 
@@ -27,7 +25,7 @@ const Navbar = () => {
             <div className="navbar w-11/12 mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="mr-1 lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
